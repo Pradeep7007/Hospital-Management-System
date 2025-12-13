@@ -1,0 +1,109 @@
+/* Container */
+.login-container {
+  width: 93%;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 25px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Responsive width */
+@media (min-width: 768px) {
+  .login-container {
+    width: 60%;
+  }
+}
+
+/* Form layout */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Labels */
+.login-form label {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+/* Inputs and select */
+.login-form input {
+  border: 1px solid #5A0E24;
+  border-radius: 5px;
+  height: 45px;
+  padding: 0 10px;
+  font-size: 15px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.login-form input:focus {
+  border-color: #393D7E;
+  box-shadow: 0 0 5px rgba(57,61,126,0.5);
+  outline: none;
+}
+
+/* Password toggle */
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 60px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  cursor: pointer;
+  color: #393D7E;
+  font-weight: 600;
+  user-select: none;
+}
+
+.toggle-password:hover {
+  text-decoration: underline;
+}
+
+/* Button */
+.login-btn {
+  margin-top: 15px;
+  padding: 12px;
+  background: #393D7E;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #2f3262;
+}
+
+/* Signup link */
+.signup-link {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.signup-text {
+  cursor: pointer;
+  font-weight: 700;
+  color: #393D7E;
+}
+
+.signup-text:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,69 @@
+/* Main grid container */
+.appoint-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 30px auto;
+  display: grid;
+  gap: 20px;
+
+  /* Default mobile view */
+  grid-template-columns: repeat(1, 1fr);
+}
+
+/* Card style */
+.appoint-card {
+  padding: 18px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.appoint-card:hover {
+  transform: translateY(-5px);
+}
+
+.appoint-card h3 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.appoint-card p {
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.appoint-card button {
+  background: #DC143C;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ---------- RESPONSIVE BREAKPOINTS ---------- */
+
+/* Tablet → 2 cards per row */
+@media (min-width: 576px) {
+  .appoint-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Laptop → 3 cards per row */
+@media (max-width: 768px) {
+  .appoint-container {
+    width: 90%;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Desktop → 4 cards per row */
+@media (min-width: 992px) {
+  .appoint-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

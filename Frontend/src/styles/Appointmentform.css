@@ -1,0 +1,76 @@
+/* Form Container */
+.form-container {
+    width: 50%;
+    border: 2px solid black;
+  margin: 30px auto;
+  padding: 20px 25px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #007bff;
+}
+
+/* Form Groups */
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  flex: 1;
+  min-width: 150px;
+  padding: 10px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Textarea Full Width */
+.form-group textarea {
+  flex: 1 1 100%;
+  resize: vertical;
+}
+
+/* .book-btn */
+.book-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-group select option{
+  text-align: center;
+  font-size: 20px;
+}
+
+.book-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 680px) {
+  .form-group {
+    flex-direction:column;
+  }
+  .form-container{
+    width: 95%;
+    border: 2px solid black;
+  }
+}
