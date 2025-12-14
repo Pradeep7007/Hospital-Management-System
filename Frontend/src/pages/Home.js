@@ -36,9 +36,10 @@ function Home() {
       </div>
 
       <div className="row p-4" >
+        <h1 className='p-4 fw-bold text-center'>Management Modules</h1>
       {Navigate.map(item => (
         <div className="col-12 col-md-4 mb-4" key={item.id}>
-          <div className="card h-100 shadow-sm">
+          <div className="card h-100 shadow-sm border border-white">
             <div className="card-body">
               <h5 className="card-title">{item.title}</h5>
               <p className="card-text">{item.content}</p>

@@ -11,3 +11,7 @@
     background-color: #e7e8e994;
     border-radius: 10px;
 }
+.cho-color:hover{
+    background-color: #acadad75;
+    transform: scale(1.05);
+}
