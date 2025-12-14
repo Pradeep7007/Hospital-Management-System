@@ -9,6 +9,7 @@ import Appointment from './pages/Appointment.js';
 import Rooms from './pages/Rooms.js';
 import Appointmentform from './components/Appointmentform.js';
 import Records from './pages/Records.js';
+import Home from './pages/Home.js';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/room" element={<Rooms />} />
         <Route path="/form" element={<Appointmentform />} />
         <Route path="/record" element={<Records />} />
+        <Route path="/" element={<Home/>} />
       </Routes>
     </BrowserRouter>
   );
