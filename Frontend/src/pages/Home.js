@@ -45,7 +45,8 @@ function Home() {
               <p className="card-text">{item.content}</p>
 
               <button
-                className="btn btn-primary"
+                className="btn btn-primary cursor-pointer
+"
                 onClick={() => navigate(item.link)}
               >
                 {item.button}
@@ -72,7 +73,7 @@ function Home() {
           <p className="fs-5 text-secondary">
             Our hospital management system provides cutting-edge features to streamline your workflows, improve patient satisfaction, and drive better outcomes.
           </p>
-          <button className='explore-btn'>Explore Features</button>
+          <button className='explore-btn bg-primary'>Explore Features</button>
           <button className='explore-btn ms-2'>Appointments</button>
         </div>
 
@@ -82,7 +83,7 @@ function Home() {
     <div className="row">
         <h2 className='p-4 text-center fw-bold'>Why Choose Our Hospital Management System?</h2>
       {Features.map(item => (
-        <div className="col-12 col-md-6 col-lg-4 mb-4" key={item.id}>
+        <div className="col-12 col-md-6 col-lg-4 mb-4 " key={item.id}>
           <div className="h-100 p-4 cho-color">
             <h5 className='fw-bold'>{item.title}</h5>
             <p>{item.content}</p>
