@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Shield, User, Stethoscope, Eye, EyeOff } from "lucide-react";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -11,7 +12,11 @@ const Signup = () => {
     password: "",
     confirmPassword: "",
   });
-  
+
+  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword1, setShowPassword1] = useState(false);
+  const [password, setPassword] = useState("");
+  const [password1, setPassword1] = useState("");
 
   return (
     <div>
@@ -47,20 +52,40 @@ const Signup = () => {
         <div className="mb-3">
           <label className="form-label">Password</label>
           <div className="input-group">
-            <input type="password" className="form-control" placeholder="Password" />
-            <button type="button" className="btn btn-outline-secondary">
-              Show
-            </button>
+            <input
+                            type={showPassword ? "text" : "password"}
+                            className="form-control"
+                            placeholder="Enter your password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                          />
+                          <button
+                            type="button"
+                            className="btn btn-outline-danger"
+                            onClick={() => setShowPassword(!showPassword)}
+                          >
+                            {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                          </button>
           </div>
         </div>
 
         <div className="mb-3">
           <label className="form-label">Confirm Password</label>
           <div className="input-group">
-            <input type="password" className="form-control" placeholder="Confirm Password" />
-            <button type="button" className="btn btn-outline-secondary">
-              Show
-            </button>
+            <input
+                            type={showPassword1 ? "text" : "password"}
+                            className="form-control"
+                            placeholder="Enter your password"
+                            value={password1}
+                            onChange={(e) => setPassword1(e.target.value)}
+                          />
+                          <button
+                            type="button"
+                            className="btn btn-outline-danger"
+                            onClick={() => setShowPassword1(!showPassword1)}
+                          >
+                            {showPassword1 ? <EyeOff size={18} /> : <Eye size={18} />}
+                          </button>
           </div>
         </div>
 

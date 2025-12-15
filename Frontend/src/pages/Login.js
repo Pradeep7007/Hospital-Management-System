@@ -75,7 +75,7 @@ const Login = () => {
               />
               <button
                 type="button"
-                className="btn btn-outline-secondary"
+                className="btn btn-outline-danger"
                 onClick={() => setShowPassword(!showPassword)}
               >
                 {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
