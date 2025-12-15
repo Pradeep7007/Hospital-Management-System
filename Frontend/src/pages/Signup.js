@@ -12,13 +12,8 @@ const Signup = () => {
   });
 
   const [errors, setErrors] = useState({});
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+
 
   const validateForm = () => {
     let newErrors = {};
@@ -33,41 +28,13 @@ const Signup = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (validateForm()) {
-      try {
-        const response = await fetch('http://localhost:5000/api/signup', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            firstName: formData.firstName,
-            lastName: formData.lastName,
-            email: formData.email,
-            password: formData.password,
-            role: 'patient',
-          }),
-        });
-        if (response.ok) {
-          navigate('/login');
-        } else {
-          const errorData = await response.json();
-          console.log('Error data:', errorData); // Add this line to log the error data
-          setErrors({ ...errors, submit: errorData.error });
-        }
-      } catch (error) {
-        setErrors({ ...errors, submit: 'An error occurred. Please try again.' });
-      }
-    }
-  };
+  
 
   return (
     <div>
-      <div className="container-fluid d-flex align-items-center justify-content-center bg-light " style={{ minHeight: '80vh' }}>
+     <div className="container-fluid d-flex align-items-center justify-content-center bg-light" style={{ minHeight: "80vh" }}>
   <div className="card shadow" style={{ maxWidth: "450px", width: "100%" }}>
-    
+
     {/* Header */}
     <div className="card-header bg-primary text-white text-center">
       <h2 className="h4 mb-1">Sign Up as a Patient</h2>
@@ -76,104 +43,45 @@ const Signup = () => {
 
     {/* Body */}
     <div className="card-body">
-      <form onSubmit={handleSubmit}>
-        
+      <form>
         <div className="row mb-3">
           <div className="col">
             <label className="form-label">First Name</label>
-            <input
-              type="text"
-              name="firstName"
-              className="form-control"
-              value={formData.firstName}
-              onChange={handleChange}
-              required
-            />
-            {errors.firstName && (
-              <div className="text-danger small">{errors.firstName}</div>
-            )}
+            <input type="text" className="form-control" placeholder="First Name" />
           </div>
 
           <div className="col">
             <label className="form-label">Last Name</label>
-            <input
-              type="text"
-              name="lastName"
-              className="form-control"
-              value={formData.lastName}
-              onChange={handleChange}
-              required
-            />
-            {errors.lastName && (
-              <div className="text-danger small">{errors.lastName}</div>
-            )}
+            <input type="text" className="form-control" placeholder="Last Name" />
           </div>
         </div>
 
         <div className="mb-3">
           <label className="form-label">Email</label>
-          <input
-            type="email"
-            name="email"
-            className="form-control"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-          {errors.email && (
-            <div className="text-danger small">{errors.email}</div>
-          )}
+          <input type="email" className="form-control" placeholder="Email" />
         </div>
 
         <div className="mb-3">
           <label className="form-label">Password</label>
           <div className="input-group">
-            <input
-              type={showPassword ? "text" : "password"}
-              name="password"
-              className="form-control"
-              value={formData.password}
-              onChange={handleChange}
-              required
-            />
-            <button
-              type="button"
-              className="btn btn-outline-secondary"
-              onClick={() => setShowPassword(!showPassword)}
-            >
-              {showPassword ? "Hide" : "Show"}
+            <input type="password" className="form-control" placeholder="Password" />
+            <button type="button" className="btn btn-outline-secondary">
+              Show
             </button>
           </div>
-          {errors.password && (
-            <div className="text-danger small">{errors.password}</div>
-          )}
         </div>
 
         <div className="mb-3">
           <label className="form-label">Confirm Password</label>
           <div className="input-group">
-            <input
-              type={showConfirmPassword ? "text" : "password"}
-              name="confirmPassword"
-              className="form-control"
-              value={formData.confirmPassword}
-              onChange={handleChange}
-              required
-            />
-            <button
-              type="button"
-              className="btn btn-outline-secondary"
-              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-            >
-              {showConfirmPassword ? "Hide" : "Show"}
+            <input type="password" className="form-control" placeholder="Confirm Password" />
+            <button type="button" className="btn btn-outline-secondary">
+              Show
             </button>
           </div>
-          {errors.confirmPassword && (
-            <div className="text-danger small">{errors.confirmPassword}</div>
-          )}
         </div>
 
-        <button type="submit" className="btn btn-primary w-100">
+        <button type="button" className="btn btn-primary w-100">
           Create Account
         </button>
       </form>
@@ -183,11 +91,7 @@ const Signup = () => {
     <div className="card-footer text-center bg-light">
       <small>
         Already have an account?{" "}
-        <button
-          type="button"
-          className="btn btn-link p-0"
-          onClick={() => navigate("/login")}
-        >
+        <button type="button" className="btn btn-link p-0">
           Log in
         </button>
       </small>
@@ -195,6 +99,7 @@ const Signup = () => {
 
   </div>
 </div>
+
 
     </div>
   )
