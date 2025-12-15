@@ -40,7 +40,7 @@ const Login = () => {
                 className={`btn ${
                   selectedRole === role.id
                     ? "btn-primary"
-                    : "btn-outline-primary"
+                    : "btn-outline-danger"
                 }`}
                 onClick={() => setSelectedRole(role.id)}
               >
