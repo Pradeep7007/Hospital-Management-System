@@ -65,7 +65,7 @@ const Signup = () => {
 
   return (
     <div>
-      <div className="container-fluid min-vh-100 d-flex align-items-center justify-content-center bg-light">
+      <div className="container-fluid d-flex align-items-center justify-content-center bg-light " style={{ minHeight: '80vh' }}>
   <div className="card shadow" style={{ maxWidth: "450px", width: "100%" }}>
     
     {/* Header */}
