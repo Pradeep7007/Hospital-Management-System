@@ -96,7 +96,7 @@ const Login = () => {
             <button
               type="button"
               className="btn btn-link p-0"
-              onClick={() => navigate("/signup")}
+              onClick={() => navigate("/")}
             >
               Sign up
             </button>

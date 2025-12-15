@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
   const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -10,24 +11,6 @@ const Signup = () => {
     password: "",
     confirmPassword: "",
   });
-
-  const [errors, setErrors] = useState({});
-
-
-
-  const validateForm = () => {
-    let newErrors = {};
-    if (!formData.firstName) newErrors.firstName = "First name is required";
-    if (!formData.lastName) newErrors.lastName = "Last name is required";
-    if (!formData.email) newErrors.email = "Email is required";
-    else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = "Email is invalid";
-    if (!formData.password) newErrors.password = "Password is required";
-    else if (formData.password.length < 6) newErrors.password = "Password must be at least 6 characters";
-    if (formData.password !== formData.confirmPassword) newErrors.confirmPassword = "Passwords do not match";
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
   
 
   return (
@@ -91,7 +74,7 @@ const Signup = () => {
     <div className="card-footer text-center bg-light">
       <small>
         Already have an account?{" "}
-        <button type="button" className="btn btn-link p-0">
+        <button type="button" className="btn btn-link p-0" onClick={()=>navigate('/login')}>
           Log in
         </button>
       </small>
